@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>طلب استشارة - السندباد</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header/Navbar -->
+    <header>
+        <nav class="navbar">
+            <div class="container nav-flex">
+                <a href="index.html" class="logo">
+                    <img src="assets/imgs/logo.svg" alt="شعار السندباد" class="logo-img">
+                </a>
+                <button class="nav-toggle" aria-label="فتح القائمة">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="about.html">من نحن</a></li>
+                    <li><a href="services.html">الخدمات</a></li>
+                    <li><a href="gallery.html">معرض الصور</a></li>
+                    <li><a href="testimonials.html">آراء العملاء</a></li>
+                    <li><a href="contact.html">تواصل معنا</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <a href="consult.html" class="btn btn-primary">احجز استشارة</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Consultation Form Section -->
+    <section class="consultation-form">
+        <div class="container">
+            <div class="form-grid">
+                <div class="form-content">
+                    <h1>طلب استشارة مجانية</h1>
+                    <p>نقدم لك استشارة مجانية من خبرائنا لتصميم مطبخك المثالي. املأ النموذج وسنتواصل معك في أقرب وقت.</p>
+                    <div class="form-features">
+                        <div class="feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>استشارة مجانية</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-clock"></i>
+                            <span>رد سريع خلال 24 ساعة</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-user-tie"></i>
+                            <span>خبراء متخصصون</span>
+                        </div>
+                    </div>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>العنوان</h4>
+                                <p>المعبيلة السابعة – مقابل مدرسة الأجيال العصرية – مسقط – سلطنة عمان</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>اتصل بنا</h4>
+                                <p><a href="tel:+96871155500">+968 7115 5500</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>البريد الإلكتروني</h4>
+                                <p><a href="mailto:info@sindbad.om">info@sindbad.om</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <div>
+                                <h4>واتساب</h4>
+                                <p><a href="https://wa.me/96871155500" target="_blank">تواصل عبر واتساب</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-container">
+                    <div class="form-progress">
+                        <div class="progress-step active" data-step="1">
+                            <span class="step-number">1</span>
+                            <span class="step-title">المعلومات الشخصية</span>
+                        </div>
+                        <div class="progress-step" data-step="2">
+                            <span class="step-number">2</span>
+                            <span class="step-title">تفاصيل المطبخ</span>
+                        </div>
+                        <div class="progress-step" data-step="3">
+                            <span class="step-number">3</span>
+                            <span class="step-title">ملاحظات إضافية</span>
+                        </div>
+                    </div>
+                    <form id="consultationForm">
+                        <div class="form-step active" data-step="1">
+                            <div class="form-group">
+                                <label for="name">الاسم الكامل</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">رقم الهاتف</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">البريد الإلكتروني</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="address">العنوان</label>
+                                <input type="text" id="address" name="address" required>
+                            </div>
+                            <div class="form-navigation">
+                                <button type="button" class="btn btn-primary next-step">التالي</button>
+                            </div>
+                        </div>
+
+                        <div class="form-step" data-step="2">
+                            <div class="form-group">
+                                <label for="kitchenType">نوع المطبخ المطلوب</label>
+                                <select id="kitchenType" name="kitchenType" required>
+                                    <option value="">اختر نوع المطبخ</option>
+                                    <option value="modern">مطبخ عصري</option>
+                                    <option value="classic">مطبخ كلاسيكي</option>
+                                    <option value="minimal">مطبخ مينيمال</option>
+                                    <option value="open">مطبخ مفتوح</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="budget">الميزانية المتوقعة</label>
+                                <select id="budget" name="budget" required>
+                                    <option value="">اختر الميزانية</option>
+                                    <option value="low">اقتصادي</option>
+                                    <option value="medium">متوسط</option>
+                                    <option value="high">فاخر</option>
+                                </select>
+                            </div>
+                            <div class="form-navigation">
+                                <button type="button" class="btn btn-secondary prev-step">السابق</button>
+                                <button type="button" class="btn btn-primary next-step">التالي</button>
+                            </div>
+                        </div>
+
+                        <div class="form-step" data-step="3">
+                            <div class="form-group">
+                                <label for="message">ملاحظات إضافية</label>
+                                <textarea id="message" name="message" rows="4"></textarea>
+                            </div>
+                            <div class="form-navigation">
+                                <button type="button" class="btn btn-secondary prev-step">السابق</button>
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fas fa-paper-plane"></i>
+                                    إرسال الطلب
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/96871155500" class="whatsapp-float" target="_blank" title="تواصل عبر واتساب">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="assets/imgs/logo.svg" alt="شعار السندباد" class="logo-img">
+                    <p>نحن نقدم أفضل تصاميم المطابخ بأحدث المواصفات العالمية، مع ضمان الجودة والخدمة المتميزة لعملائنا الكرام.</p>
+                    <div class="social-links">
+                        <a href="#" title="فيسبوك"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" title="تويتر"><i class="fab fa-twitter"></i></a>
+                        <a href="#" title="انستغرام"><i class="fab fa-instagram"></i></a>
+                        <a href="#" title="لينكد إن"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>روابط سريعة</h4>
+                        <ul>
+                            <li><a href="about.html">من نحن</a></li>
+                            <li><a href="services.html">خدماتنا</a></li>
+                            <li><a href="gallery.html">معرض الأعمال</a></li>
+                            <li><a href="testimonials.html">آراء العملاء</a></li>
+                            <li><a href="contact.html">تواصل معنا</a></li>
+                            <li><a href="privacy.html">سياسة الخصوصية</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h4>تواصل معنا</h4>
+                        <ul>
+                            <li>
+                                <a href="tel:+96871155500">
+                                    <i class="fas fa-phone"></i>
+                                    +968 7115 5500
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mailto:info@sindbad.om">
+                                    <i class="fas fa-envelope"></i>
+                                    info@sindbad.om
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://maps.google.com" target="_blank">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    المعبيلة السابعة – مقابل مدرسة الأجيال العصرية – مسقط
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://wa.me/96871155500" target="_blank">
+                                    <i class="fab fa-whatsapp"></i>
+                                    تواصل عبر واتساب
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 السندباد – الوكيل الحصري لـ أوپين | جميع الحقوق محفوظة</p>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        .consultation-form {
+            padding: 100px 0 40px;
+            background: #F8F8FA;
+            min-height: calc(100vh - 80px);
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .form-content {
+            text-align: center;
+            margin-bottom: 0;
+            position: sticky;
+            top: 100px;
+        }
+
+        .form-container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            padding: 30px;
+        }
+
+        .form-progress {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            position: relative;
+            padding: 0 20px;
+        }
+
+        .form-progress::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #4BA3B3;
+            opacity: 0.2;
+            z-index: 1;
+        }
+
+        .progress-step {
+            position: relative;
+            z-index: 2;
+            background: white;
+            padding: 0 15px;
+            text-align: center;
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #F8F8FA;
+            color: #4BA3B3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px;
+            font-weight: bold;
+            border: 2px solid #4BA3B3;
+            transition: all 0.3s ease;
+        }
+
+        .progress-step.active .step-number {
+            background: #4BA3B3;
+            color: white;
+        }
+
+        .step-title {
+            font-size: 14px;
+            color: #2C3E50;
+            font-weight: 500;
+        }
+
+        .progress-step.active .step-title {
+            color: #4BA3B3;
+            font-weight: 600;
+        }
+
+        .form-step {
+            display: none;
+            background: white;
+            border-radius: 12px;
+        }
+
+        .form-step.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #2C3E50;
+            text-align: right;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #E0E0E0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background: #F8F8FA;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #4BA3B3;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(75, 163, 179, 0.1);
+            background: white;
+        }
+
+        .form-group input.error,
+        .form-group select.error {
+            border-color: #E74C3C;
+        }
+
+        .form-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #F0F0F0;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: #4BA3B3;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #3D8A99;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background: #F8F8FA;
+            color: #2C3E50;
+        }
+
+        .btn-secondary:hover {
+            background: #E8E8EA;
+            transform: translateY(-2px);
+        }
+
+        .form-content h1 {
+            color: #4BA3B3;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .form-content p {
+            color: #7F8C8D;
+            font-size: 1rem;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .form-features {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #2C3E50;
+        }
+
+        .feature i {
+            color: #4BA3B3;
+            font-size: 1.2rem;
+        }
+
+        .contact-info {
+            margin-top: 20px;
+            padding: 20px;
+            background: #F8F8FA;
+            border-radius: 12px;
+            text-align: right;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(75, 163, 179, 0.1);
+        }
+
+        .contact-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .contact-item i {
+            color: #4BA3B3;
+            font-size: 1.3rem;
+            margin-top: 3px;
+        }
+
+        .contact-item h4 {
+            color: #2C3E50;
+            font-size: 1rem;
+            margin-bottom: 3px;
+            font-weight: 600;
+        }
+
+        .contact-item p {
+            color: #7F8C8D;
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        .contact-item a {
+            color: #4BA3B3;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: #3D8A99;
+        }
+
+        @media (max-width: 992px) {
+            .form-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .form-content {
+                position: static;
+            }
+
+            .form-container {
+                max-width: 800px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .consultation-form {
+                padding: 20px 0;
+            }
+
+            .form-grid {
+                gap: 20px;
+            }
+
+            .form-container {
+                padding: 20px;
+            }
+
+            .form-progress {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+
+            .form-progress::before {
+                display: none;
+            }
+
+            .progress-step {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .step-number {
+                margin: 0;
+            }
+
+            .form-navigation {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .form-features {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .contact-info {
+                padding: 20px;
+            }
+
+            .contact-item {
+                gap: 10px;
+            }
+
+            .contact-item i {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+
+    <script>
+        // Responsive navbar toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navToggle.contains(e.target) && !navLinks.contains(e.target)) {
+                navLinks.classList.remove('open');
+            }
+        });
+
+        // Form steps navigation
+        const formSteps = document.querySelectorAll('.form-step');
+        const progressSteps = document.querySelectorAll('.progress-step');
+        const nextButtons = document.querySelectorAll('.next-step');
+        const prevButtons = document.querySelectorAll('.prev-step');
+
+        function showStep(stepNumber) {
+            formSteps.forEach(step => {
+                step.classList.remove('active');
+                if (step.dataset.step === stepNumber.toString()) {
+                    step.classList.add('active');
+                }
+            });
+
+            progressSteps.forEach(step => {
+                step.classList.remove('active');
+                if (parseInt(step.dataset.step) <= parseInt(stepNumber)) {
+                    step.classList.add('active');
+                }
+            });
+        }
+
+        nextButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const currentStep = button.closest('.form-step');
+                const inputs = currentStep.querySelectorAll('input[required], select[required]');
+                let isValid = true;
+
+                inputs.forEach(input => {
+                    if (!input.value) {
+                        isValid = false;
+                        input.classList.add('error');
+                    } else {
+                        input.classList.remove('error');
+                    }
+                });
+
+                if (!isValid) {
+                    alert('الرجاء ملء جميع الحقول المطلوبة');
+                    return;
+                }
+
+                const nextStepNumber = parseInt(currentStep.dataset.step) + 1;
+                showStep(nextStepNumber);
+            });
+        });
+
+        prevButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const currentStep = button.closest('.form-step');
+                const prevStepNumber = parseInt(currentStep.dataset.step) - 1;
+                showStep(prevStepNumber);
+            });
+        });
+
+        // Form submission
+        const form = document.getElementById('consultationForm');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('تم إرسال طلبك بنجاح! سنتواصل معك قريباً.');
+            form.reset();
+            showStep(1);
+        });
+    </script>
+</body>
+</html> 
