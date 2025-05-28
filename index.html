@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
     <style>
         /* Responsive Styles */
         @media (max-width: 1200px) {
@@ -543,7 +544,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
+    <section class="hero" id="home" data-aos="fade-up">
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
@@ -594,7 +595,7 @@
     </section>
 
     <!-- About Us Section -->
-    <section class="about-us" id="about">
+    <section class="about-us" id="about" data-aos="fade-up">
         <div class="container about-flex">
             <div class="about-content">
                 <h2>من نحن</h2>
@@ -633,11 +634,11 @@
     </section>
 
     <!-- Kitchen Models Section -->
-    <section id="kitchen-models" class="kitchen-models">
+    <section id="kitchen-models" class="kitchen-models" data-aos="fade-up">
         <div class="container">
             <h2>تصاميمنا المميزة</h2>
             <div class="models-grid">
-                <div class="model-card" data-model="dalia">
+                <div class="model-card" data-model="dalia" data-aos="zoom-in">
                     <div class="model-image">
                         <img src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="دليا شيك">
                     </div>
@@ -646,7 +647,7 @@
                         <p>أناقة كلاسيكية مع لمسة عصرية</p>
                     </div>
                 </div>
-                <div class="model-card" data-model="dolce">
+                <div class="model-card" data-model="dolce" data-aos="zoom-in">
                     <div class="model-image">
                         <img src="https://images.unsplash.com/photo-1556912173-3bb406ef7e77?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="دولتشي كونفيفيال">
                     </div>
@@ -655,7 +656,7 @@
                         <p>تصميم مودرن يناسب المساحات الواسعة</p>
                     </div>
                 </div>
-                <div class="model-card" data-model="modern">
+                <div class="model-card" data-model="modern" data-aos="zoom-in">
                     <div class="model-image">
                         <img src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="دليا شيك">
                     </div>
@@ -736,81 +737,125 @@
     </div>
 
     <!-- Project Steps Section -->
-    <section class="project-steps" id="steps">
+    <section class="project-steps furniture-steps" id="steps" data-aos="fade-up">
         <div class="container">
-            <h2>كيف نعمل معك</h2>
-            <div class="steps-grid">
-                <div class="step-card">
-                    <div class="step-icon">
-                        <i class="fas fa-comments"></i>
+            <h2>مراحل العمل</h2>
+            <p class="section-desc">رحلتك معنا تبدأ من الاستشارة وتنتهي بمطبخ أحلامك في بيتك!</p>
+            <div class="steps-furniture-list">
+                <div class="step-furniture-card" style="background-image:url('https://images.unsplash.com/photo-1520880867055-1e30d1cb001c?auto=format&fit=crop&w=800&q=80');" data-aos="fade-up" data-aos-delay="0">
+                    <div class="step-furniture-overlay"></div>
+                    <div class="step-furniture-content">
+                        <span class="step-furniture-number">01</span>
+                        <span class="step-furniture-title">جمع المعلومات من العميل</span>
+                        <div class="step-furniture-desc">نستمع لاحتياجاتك ونحدد متطلبات مشروعك في الأثاث أو المطبخ.</div>
                     </div>
-                    <h3>استشارة مجانية</h3>
-                    <p>نستمع إلى متطلباتك ونقدم لك النصائح المناسبة</p>
                 </div>
-                <div class="step-card">
-                    <div class="step-icon">
-                        <i class="fas fa-pencil-ruler"></i>
+                <div class="step-furniture-card" style="background-image:url('https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=800&q=80');" data-aos="fade-up" data-aos-delay="100">
+                    <div class="step-furniture-overlay"></div>
+                    <div class="step-furniture-content">
+                        <span class="step-furniture-number">02</span>
+                        <span class="step-furniture-title">مرحلة التصميم</span>
+                        <div class="step-furniture-desc">نعد لك تصميماً ثلاثي الأبعاد يعكس رؤيتك ويلائم المساحة.</div>
                     </div>
-                    <h3>تصميم ثلاثي الأبعاد</h3>
-                    <p>نقدم لك تصميماً ثلاثي الأبعاد لمطبخك المستقبلي</p>
                 </div>
-                <div class="step-card">
-                    <div class="step-icon">
-                        <i class="fas fa-tools"></i>
+                <div class="step-furniture-card" style="background-image:url('https://images.unsplash.com/photo-1515168833906-d2a3b82b302b?auto=format&fit=crop&w=800&q=80');" data-aos="fade-up" data-aos-delay="200">
+                    <div class="step-furniture-overlay"></div>
+                    <div class="step-furniture-content">
+                        <span class="step-furniture-number">03</span>
+                        <span class="step-furniture-title">مرحلة التسعير</span>
+                        <div class="step-furniture-desc">نقدم لك عرض سعر مفصل وواضح بناءً على التصميم المختار.</div>
                     </div>
-                    <h3>التنفيذ</h3>
-                    <p>فريق محترف لتنفيذ مشروعك بأعلى معايير الجودة</p>
                 </div>
-                <div class="step-card">
-                    <div class="step-icon">
-                        <i class="fas fa-check-circle"></i>
+                <div class="step-furniture-card" style="background-image:url('https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?auto=format&fit=crop&w=800&q=80');" data-aos="fade-up" data-aos-delay="300">
+                    <div class="step-furniture-overlay"></div>
+                    <div class="step-furniture-content">
+                        <span class="step-furniture-number">04</span>
+                        <span class="step-furniture-title">مرحلة التعاقد</span>
+                        <div class="step-furniture-desc">نوقع العقد ونحدد كافة التفاصيل والالتزامات الزمنية.</div>
                     </div>
-                    <h3>تسليم المشروع</h3>
-                    <p>نضمن لك تسليم المشروع في الوقت المحدد</p>
+                </div>
+                <div class="step-furniture-card" style="background-image:url('https://images.unsplash.com/photo-1507089947368-19c1da9775ae?auto=format&fit=crop&w=800&q=80');" data-aos="fade-up" data-aos-delay="400">
+                    <div class="step-furniture-overlay"></div>
+                    <div class="step-furniture-content">
+                        <span class="step-furniture-number">05</span>
+                        <span class="step-furniture-title">مرحلة رفع المقاسات</span>
+                        <div class="step-furniture-desc">يقوم فريقنا بزيارة الموقع ورفع المقاسات النهائية بدقة.</div>
+                    </div>
+                </div>
+                <div class="step-furniture-card" style="background-image:url('https://images.unsplash.com/photo-1465101178521-c1a9136a3b99?auto=format&fit=crop&w=800&q=80');" data-aos="fade-up" data-aos-delay="500">
+                    <div class="step-furniture-overlay"></div>
+                    <div class="step-furniture-content">
+                        <span class="step-furniture-number">06</span>
+                        <span class="step-furniture-title">إرسال الطلب للتصنيع</span>
+                        <div class="step-furniture-desc">نرسل الطلب للمصنع لبدء عملية التصنيع حسب المواصفات.</div>
+                    </div>
+                </div>
+                <div class="step-furniture-card" style="background-image:url('https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=800&q=80');" data-aos="fade-up" data-aos-delay="600">
+                    <div class="step-furniture-overlay"></div>
+                    <div class="step-furniture-content">
+                        <span class="step-furniture-number">07</span>
+                        <span class="step-furniture-title">مرحلة التصنيع والشحن</span>
+                        <div class="step-furniture-desc">يتم تصنيع الأثاث أو المطبخ وشحنه إلى موقعك مع متابعة مستمرة.</div>
+                    </div>
+                </div>
+                <div class="step-furniture-card" style="background-image:url('https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=800&q=80');" data-aos="fade-up" data-aos-delay="700">
+                    <div class="step-furniture-overlay"></div>
+                    <div class="step-furniture-content">
+                        <span class="step-furniture-number">08</span>
+                        <span class="step-furniture-title">التوصيل والتركيب واختبار الجودة</span>
+                        <div class="step-furniture-desc">نقوم بتركيب الأثاث أو المطبخ واختبار الجودة لضمان رضاك التام.</div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Why Choose Us Section -->
-    <section class="why-choose-us" id="why-us">
+    <section class="why-choose-us" id="why-us" data-aos="fade-up">
         <div class="container">
             <h2>لماذا تختارنا</h2>
             <div class="features-grid">
-                <div class="feature-card">
+                <div class="feature-card" data-aos="zoom-in">
                     <div class="feature-icon">
                         <i class="fas fa-medal"></i>
                     </div>
                     <h3>جودة عالية</h3>
                     <p>نستخدم أفضل المواد وأحدث التقنيات</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card" data-aos="zoom-in" data-aos-delay="100">
                     <div class="feature-icon">
                         <i class="fas fa-clock"></i>
                     </div>
                     <h3>التزام بالمواعيد</h3>
                     <p>نلتزم بتسليم مشروعك في الوقت المحدد</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card" data-aos="zoom-in" data-aos-delay="200">
                     <div class="feature-icon">
                         <i class="fas fa-headset"></i>
                     </div>
                     <h3>دعم مستمر</h3>
                     <p>فريق خدمة العملاء متاح دائماً لمساعدتك</p>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card" data-aos="zoom-in" data-aos-delay="300">
                     <div class="feature-icon">
                         <i class="fas fa-shield-alt"></i>
                     </div>
                     <h3>ضمان الجودة</h3>
                     <p>ضمان لمدة 10 سنوات على منتجاتنا</p>
                 </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>خدمة ما بعد البيع</h3>
+                    <p>نقدم لك خدمة ما بعد البيع لضمان راحتك ورضاك التام بعد التركيب.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Consultation Section -->
-    <section class="consultation" id="consult">
+    <section class="consultation" id="consult" data-aos="fade-up">
         <div class="container">
             <div class="consultation-content">
                 <h2>ابدأ مشروع مطبخك المثالي اليوم</h2>
@@ -824,7 +869,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section class="contact" id="contact">
+    <section class="contact" id="contact" data-aos="fade-up">
         <div class="container">
             <div class="contact-grid">
                 <div class="contact-info">
@@ -835,7 +880,7 @@
                             <i class="fas fa-map-marker-alt"></i>
                             <div>
                                 <strong>العنوان:</strong>
-                                <p>المعبيلة السابعة – مقابل مدرسة الأجيال العصرية – مسقط – سلطنة عمان</p>
+                                <p>المعبيلة - عبري - ابراء - صلالة</p>
                             </div>
                         </div>
                         <div class="contact-item">
@@ -881,7 +926,7 @@
     </a>
 
     <!-- Footer -->
-    <footer>
+    <footer data-aos="fade-up">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
@@ -925,7 +970,7 @@
                             <li>
                                 <a href="https://maps.google.com/?q=المعبيلة+السابعة+مسقط" target="_blank">
                                     <i class="fas fa-map-marker-alt"></i>
-                                    المعبيلة السابعة – مقابل مدرسة الأجيال العصرية – مسقط
+                                    المعبيلة - عبري - ابراء - صلالة
                                 </a>
                             </li>
                             <li>
@@ -945,6 +990,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
     // Improved Navbar Toggle
     const navToggle = document.querySelector('.nav-toggle');
@@ -1098,6 +1144,12 @@
                 }
             }
         });
+    });
+
+    AOS.init({
+        duration: 900,
+        once: true,
+        offset: 60
     });
     </script>
 </body>
