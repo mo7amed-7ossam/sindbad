@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم - السندباد</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="../assets/imgs/logo.svg" alt="شعار السندباد" class="sidebar-logo">
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active">
+                        <a href="dashboard.html">
+                            <i class="fas fa-home"></i>
+                            الرئيسية
+                        </a>
+                    </li>
+                    <li>
+                        <a href="consultations.html">
+                            <i class="fas fa-calendar-check"></i>
+                            الاستشارات
+                        </a>
+                    </li>
+                    <li>
+                        <a href="messages.html">
+                            <i class="fas fa-envelope"></i>
+                            الرسائل
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="#" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    تسجيل الخروج
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="content-header">
+                <div class="header-title">
+                    <h1>لوحة التحكم</h1>
+                    <p>مرحباً بك في لوحة تحكم السندباد</p>
+                </div>
+            </header>
+
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>الاستشارات</h3>
+                        <p>12 استشارة جديدة</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>الرسائل</h3>
+                        <p>5 رسائل جديدة</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard-content">
+                <div class="content-section">
+                    <div class="section-header">
+                        <h2>آخر الاستشارات</h2>
+                        <a href="consultations.html" class="view-all">عرض الكل</a>
+                    </div>
+                    <div class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>العميل</th>
+                                    <th>التاريخ</th>
+                                    <th>الحالة</th>
+                                    <th>الإجراءات</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>أحمد محمد</td>
+                                    <td>2024/03/15</td>
+                                    <td><span class="status pending">قيد الانتظار</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary">عرض</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>سارة علي</td>
+                                    <td>2024/03/14</td>
+                                    <td><span class="status completed">مكتملة</span></td>
+                                    <td>
+                                        <button class="btn btn-sm btn-primary">عرض</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <div class="section-header">
+                        <h2>آخر الرسائل</h2>
+                        <a href="messages.html" class="view-all">عرض الكل</a>
+                    </div>
+                    <div class="messages-list">
+                        <div class="message-item">
+                            <div class="message-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="message-content">
+                                <h4>استفسار عن التصاميم</h4>
+                                <p>مرحباً، أود الاستفسار عن تصاميم المطابخ المتوفرة...</p>
+                            </div>
+                            <div class="message-time">
+                                <span>منذ ساعة</span>
+                            </div>
+                        </div>
+                        <div class="message-item">
+                            <div class="message-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="message-content">
+                                <h4>طلب عرض سعر</h4>
+                                <p>أود الحصول على عرض سعر لمطبخ مساحته 20 متر...</p>
+                            </div>
+                            <div class="message-time">
+                                <span>منذ 3 ساعات</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Toggle Sidebar on Mobile
+        const sidebar = document.querySelector('.sidebar');
+        const mainContent = document.querySelector('.main-content');
+        
+        // Add click event to sidebar links
+        document.querySelectorAll('.sidebar-nav a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelectorAll('.sidebar-nav li').forEach(item => {
+                    item.classList.remove('active');
+                });
+                this.parentElement.classList.add('active');
+            });
+        });
+
+        // Logout functionality
+        document.querySelector('.logout-btn').addEventListener('click', function(e) {
+            e.preventDefault();
+            if (confirm('هل أنت متأكد من تسجيل الخروج؟')) {
+                window.location.href = 'index.html';
+            }
+        });
+    </script>
+</body>
+</html> 
