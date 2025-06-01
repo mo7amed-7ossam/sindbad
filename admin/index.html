@@ -3,62 +3,241 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تسجيل الدخول - لوحة تحكم السندباد</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>لوحة تحكم سندباد | Sindbad Dashboard</title>
     <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="login-page">
-    <div class="login-container">
-        <div class="login-box">
-            <div class="login-header">
-                <img src="../assets/imgs/logo.svg" alt="شعار السندباد" class="login-logo">
-                <h1>تسجيل الدخول</h1>
-                <p>مرحباً بك في لوحة تحكم السندباد</p>
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="imgs/logo.svg" alt="Sindbad Logo" class="logo">
             </div>
-            <form class="login-form" id="loginForm">
-                <div class="form-group">
-                    <label for="username">
-                        <i class="fas fa-user"></i>
-                        اسم المستخدم
-                    </label>
-                    <input type="text" id="username" name="username" required>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active">
+                        <a href="#dashboard">
+                            <i class="fas fa-home"></i>
+                            <span>الرئيسية</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#clients">
+                            <i class="fas fa-users"></i>
+                            <span>العملاء</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#consultations">
+                            <i class="fas fa-comments"></i>
+                            <span>الاستشارات</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#messages">
+                            <i class="fas fa-envelope"></i>
+                            <span>الرسائل</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#settings">
+                            <i class="fas fa-cog"></i>
+                            <span>الإعدادات</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="content-header">
+                <div class="header-title">
+                    <h1>لوحة التحكم</h1>
                 </div>
-                <div class="form-group">
-                    <label for="password">
-                        <i class="fas fa-lock"></i>
-                        كلمة المرور
-                    </label>
-                    <input type="password" id="password" name="password" required>
+                <div class="header-actions">
+                    <div class="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">3</span>
+                        <div class="notifications-dropdown">
+                            <div class="notifications-header">
+                                <h3>الإشعارات</h3>
+                                <button class="mark-all-read">تعيين الكل كمقروء</button>
+                            </div>
+                            <div class="notifications-list">
+                                <div class="notification-item unread">
+                                    <div class="notification-icon">
+                                        <i class="fas fa-comments"></i>
+                                    </div>
+                                    <div class="notification-content">
+                                        <p>طلب استشارة جديد من أحمد محمد</p>
+                                        <span class="notification-time">منذ 5 دقائق</span>
+                                    </div>
+                                </div>
+                                <div class="notification-item unread">
+                                    <div class="notification-icon">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div class="notification-content">
+                                        <p>رسالة جديدة من سارة أحمد</p>
+                                        <span class="notification-time">منذ 15 دقيقة</span>
+                                    </div>
+                                </div>
+                                <div class="notification-item unread">
+                                    <div class="notification-icon">
+                                        <i class="fas fa-users"></i>
+                                    </div>
+                                    <div class="notification-content">
+                                        <p>عميل جديد قام بالتسجيل</p>
+                                        <span class="notification-time">منذ ساعة</span>
+                                    </div>
+                                </div>
+                                <div class="notification-item">
+                                    <div class="notification-icon">
+                                        <i class="fas fa-comments"></i>
+                                    </div>
+                                    <div class="notification-content">
+                                        <p>تم الرد على استشارة محمد علي</p>
+                                        <span class="notification-time">منذ 3 ساعات</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="notifications-footer">
+                                <a href="#all-notifications">عرض كل الإشعارات</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="user-menu">
+                        <img src="https://via.placeholder.com/40" alt="User Avatar" class="avatar">
+                        <span>مدير النظام</span>
+                        <div class="user-dropdown">
+                            <div class="user-info">
+                                <img src="https://via.placeholder.com/60" alt="User Avatar" class="avatar-large">
+                                <div class="user-details">
+                                    <h3>مدير النظام</h3>
+                                    <p>admin@sindbad.com</p>
+                                </div>
+                            </div>
+                            <div class="dropdown-menu">
+                                <a href="#profile" class="menu-item">
+                                    <i class="fas fa-user"></i>
+                                    <span>الملف الشخصي</span>
+                                </a>
+                                <a href="#settings" class="menu-item">
+                                    <i class="fas fa-cog"></i>
+                                    <span>الإعدادات</span>
+                                </a>
+                                <a href="#help" class="menu-item">
+                                    <i class="fas fa-question-circle"></i>
+                                    <span>المساعدة</span>
+                                </a>
+                                <div class="menu-divider"></div>
+                                <a href="#logout" class="menu-item text-danger">
+                                    <i class="fas fa-sign-out-alt"></i>
+                                    <span>تسجيل الخروج</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group remember-me">
-                    <label>
-                        <input type="checkbox" name="remember">
-                        تذكرني
-                    </label>
-                    <a href="#" class="forgot-password">نسيت كلمة المرور؟</a>
+            </header>
+
+            <!-- Dashboard Stats -->
+            <div class="dashboard-stats">
+                <div class="stat-card clients">
+                    <div class="stat-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>إجمالي العملاء</h3>
+                        <p>1,234</p>
+                    </div>
                 </div>
-                <button type="submit" class="btn btn-primary btn-block">
-                    <i class="fas fa-sign-in-alt"></i>
-                    تسجيل الدخول
-                </button>
-            </form>
-        </div>
+                <div class="stat-card consultations">
+                    <div class="stat-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>طلبات الاستشارات</h3>
+                        <p>56</p>
+                    </div>
+                </div>
+                <div class="stat-card messages">
+                    <div class="stat-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>الرسائل الجديدة</h3>
+                        <p>12</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Consultations -->
+            <div class="data-table">
+                <div class="table-header">
+                    <h2>آخر طلبات الاستشارات</h2>
+                </div>
+                <div class="table-content">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>الاسم الكامل</th>
+                                <th>رقم الهاتف</th>
+                                <th>الولاية</th>
+                                <th>الميزانية المتوقعة</th>
+                                <th>إجراءات</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>سالم بن علي</td>
+                                <td dir="ltr" class="phone-number">+968 9123 4567</td>
+                                <td>مسقط</td>
+                                <td>من 2500 إلى 3500 ريال عماني</td>
+                                <td>
+                                    <div class="table-actions">
+                                        <a class="action-btn whatsapp-btn" title="تواصل واتساب" href="https://wa.me/96891234567" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                                        <button class="action-btn text-danger" title="حذف"><i class="fas fa-trash"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>مريم الشحية</td>
+                                <td dir="ltr" class="phone-number">+968 9876 5432</td>
+                                <td>ظفار</td>
+                                <td>من 3500 إلى 5500 ريال عماني</td>
+                                <td>
+                                    <div class="table-actions">
+                                        <a class="action-btn whatsapp-btn" title="تواصل واتساب" href="https://wa.me/96898765432" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                                        <button class="action-btn text-danger" title="حذف"><i class="fas fa-trash"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>محمد البلوشي</td>
+                                <td dir="ltr" class="phone-number">+968 9234 5678</td>
+                                <td>شمال الباطنة</td>
+                                <td>من 5500 إلى 10000 ريال عماني</td>
+                                <td>
+                                    <div class="table-actions">
+                                        <a class="action-btn whatsapp-btn" title="تواصل واتساب" href="https://wa.me/96892345678" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                                        <button class="action-btn text-danger" title="حذف"><i class="fas fa-trash"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            
+        </main>
     </div>
 
-    <script>
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-            
-            // هنا سيتم إضافة التحقق من صحة بيانات تسجيل الدخول
-            if (username && password) {
-                window.location.href = 'dashboard.html';
-            }
-        });
-    </script>
+    <script src="js/admin.js"></script>
 </body>
 </html> 

@@ -3,37 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>إدارة الرسائل - لوحة التحكم</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>الرسائل | لوحة تحكم سندباد</title>
     <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="dashboard">
         <!-- Sidebar -->
         <aside class="sidebar">
             <div class="sidebar-header">
-                <img src="../assets/images/logo.png" alt="السندباد" class="sidebar-logo">
+                <img src="imgs/logo.svg" alt="Sindbad Logo" class="logo">
             </div>
             <nav class="sidebar-nav">
                 <ul>
                     <li>
-                        <a href="dashboard.html">
+                        <a href="index.html">
                             <i class="fas fa-home"></i>
                             <span>الرئيسية</span>
                         </a>
                     </li>
                     <li>
-                        <a href="designs.html">
-                            <i class="fas fa-palette"></i>
-                            <span>التصاميم</span>
+                        <a href="clients.html">
+                            <i class="fas fa-users"></i>
+                            <span>العملاء</span>
                         </a>
                     </li>
                     <li>
                         <a href="consultations.html">
-                            <i class="fas fa-calendar-check"></i>
+                            <i class="fas fa-comments"></i>
                             <span>الاستشارات</span>
                         </a>
                     </li>
@@ -44,224 +42,210 @@
                         </a>
                     </li>
                     <li>
-                        <a href="settings.html">
+                        <a href="#settings">
                             <i class="fas fa-cog"></i>
                             <span>الإعدادات</span>
                         </a>
                     </li>
                 </ul>
             </nav>
-            <div class="sidebar-footer">
-                <a href="#" class="logout-btn" onclick="confirmLogout()">
-                    <i class="fas fa-sign-out-alt"></i>
-                    <span>تسجيل الخروج</span>
-                </a>
-            </div>
         </aside>
 
         <!-- Main Content -->
         <main class="main-content">
-            <div class="content-header">
+            <!-- Header -->
+            <header class="content-header">
                 <div class="header-title">
-                    <h1>إدارة الرسائل</h1>
-                    <p>إدارة رسائل العملاء والاستفسارات</p>
+                    <h1>الرسائل الواردة</h1>
                 </div>
-            </div>
-
-            <!-- Filters -->
-            <div class="content-section">
-                <div class="filters">
-                    <div class="filter-group">
-                        <label for="status">الحالة:</label>
-                        <select id="status" class="form-control">
-                            <option value="">الكل</option>
-                            <option value="unread">غير مقروء</option>
-                            <option value="read">مقروء</option>
-                            <option value="replied">تم الرد</option>
-                        </select>
-                    </div>
-                    <div class="filter-group">
-                        <label for="date">التاريخ:</label>
-                        <input type="date" id="date" class="form-control">
-                    </div>
-                    <div class="filter-group">
-                        <label for="search">بحث:</label>
-                        <input type="text" id="search" class="form-control" placeholder="ابحث عن رسالة...">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Messages List -->
-            <div class="content-section">
-                <div class="messages-list">
-                    <div class="message-item unread" onclick="viewMessage(1)">
-                        <div class="message-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="message-content">
-                            <h4>استفسار عن تصميم المطبخ</h4>
-                            <p>مرحباً، أرغب في معرفة المزيد عن تصاميم المطابخ المودرن...</p>
-                        </div>
-                        <div class="message-meta">
-                            <span class="message-sender">أحمد محمد</span>
-                            <span class="message-time">منذ 5 دقائق</span>
-                            <span class="status unread">غير مقروء</span>
+                <div class="header-actions">
+                    <div class="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">3</span>
+                        <div class="notifications-dropdown">
+                            <!-- Notifications content -->
                         </div>
                     </div>
-
-                    <div class="message-item" onclick="viewMessage(2)">
-                        <div class="message-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="message-content">
-                            <h4>طلب معلومات عن الضمان</h4>
-                            <p>أود معرفة تفاصيل الضمان المقدم على المطابخ...</p>
-                        </div>
-                        <div class="message-meta">
-                            <span class="message-sender">سارة علي</span>
-                            <span class="message-time">منذ ساعة</span>
-                            <span class="status read">مقروء</span>
-                        </div>
-                    </div>
-
-                    <div class="message-item" onclick="viewMessage(3)">
-                        <div class="message-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="message-content">
-                            <h4>استفسار عن موعد التركيب</h4>
-                            <p>متى يمكن تركييب المطبخ بعد الموافقة على التصميم؟</p>
-                        </div>
-                        <div class="message-meta">
-                            <span class="message-sender">محمد خالد</span>
-                            <span class="message-time">منذ 3 ساعات</span>
-                            <span class="status replied">تم الرد</span>
+                    <div class="user-menu">
+                        <img src="https://via.placeholder.com/40" alt="User Avatar" class="avatar">
+                        <span>مدير النظام</span>
+                        <div class="user-dropdown">
+                            <!-- User dropdown content -->
                         </div>
                     </div>
                 </div>
-            </div>
+            </header>
+
+            <!-- Messages Table -->
+            <section class="data-table">
+                <div class="table-header">
+                    <h2>قائمة الرسائل</h2>
+                </div>
+                <div class="table-content">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>الاسم</th>
+                                <th>رقم الهاتف</th>
+                                <th>الرسالة</th>
+                                <th>الوقت والتاريخ</th>
+                                <th>الحالة</th>
+                                <th>إجراءات</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>خالد محمود</td>
+                                <td dir="ltr">+968 9123 4567</td>
+                                <td>أرغب في معرفة المزيد عن خدمات تصميم المطابخ...</td>
+                                <td>2024/03/20 - 10:15</td>
+                                <td><span class="status-badge status-unread">غير مقروءة</span></td>
+                                <td>
+                                    <div class="table-actions">
+                                        <a class="action-btn whatsapp-btn" title="رد عبر واتساب" href="https://wa.me/96891234567" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                                        <button class="action-btn text-danger" title="حذف"><i class="fas fa-trash"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>نورا سعيد</td>
+                                <td dir="ltr">+968 9876 5432</td>
+                                <td>هل تقدمون خدمة التركيب في صلالة؟</td>
+                                <td>2024/03/19 - 16:40</td>
+                                <td><span class="status-badge status-read">مقروءة</span></td>
+                                <td>
+                                    <div class="table-actions">
+                                        <a class="action-btn whatsapp-btn" title="رد عبر واتساب" href="https://wa.me/96898765432" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                                        <button class="action-btn text-danger" title="حذف"><i class="fas fa-trash"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>سعيد العامري</td>
+                                <td dir="ltr">+968 9234 5678</td>
+                                <td>شكراً على سرعة الرد والتعامل الراقي.</td>
+                                <td>2024/03/18 - 08:05</td>
+                                <td><span class="status-badge status-read">مقروءة</span></td>
+                                <td>
+                                    <div class="table-actions">
+                                        <a class="action-btn whatsapp-btn" title="رد عبر واتساب" href="https://wa.me/96892345678" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                                        <button class="action-btn text-danger" title="حذف"><i class="fas fa-trash"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
         </main>
     </div>
 
-    <!-- View Message Modal -->
-    <div id="messageModal" class="modal">
+    <!-- Modal for full message -->
+    <div class="modal" id="messageModal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2>تفاصيل الرسالة</h2>
-                <button class="close-btn" onclick="closeMessageModal()">&times;</button>
+                <h3>تفاصيل الرسالة</h3>
+                <button class="close-modal" onclick="closeMessageModal()">&times;</button>
             </div>
-            <div class="modal-body">
-                <div class="message-details">
-                    <div class="message-header">
-                        <div class="message-sender-info">
-                            <h3 id="messageSubject"></h3>
-                            <p class="sender-name" id="messageSender"></p>
-                            <p class="sender-email" id="messageEmail"></p>
-                        </div>
-                        <div class="message-time-info">
-                            <p class="message-date" id="messageDate"></p>
-                            <p class="message-time" id="messageTime"></p>
-                        </div>
-                    </div>
-                    <div class="message-body">
-                        <p id="messageContent"></p>
-                    </div>
-                </div>
-                <div class="reply-section">
-                    <h4>الرد على الرسالة</h4>
-                    <form id="replyForm">
-                        <div class="form-group">
-                            <label for="replySubject">الموضوع:</label>
-                            <input type="text" id="replySubject" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="replyMessage">الرد:</label>
-                            <textarea id="replyMessage" class="form-control" rows="5" required></textarea>
-                        </div>
-                        <div class="form-actions">
-                            <button type="submit" class="btn btn-primary">
-                                <i class="fas fa-paper-plane"></i>
-                                إرسال الرد
-                            </button>
-                            <button type="button" class="btn btn-secondary" onclick="closeMessageModal()">
-                                <i class="fas fa-times"></i>
-                                إغلاق
-                            </button>
-                        </div>
-                    </form>
-                </div>
+            <div class="modal-body" id="modalMessageBody">
+                <!-- سيتم تعبئتها ديناميكياً -->
             </div>
         </div>
     </div>
 
+    <!-- Modal for delete confirmation -->
+    <div class="modal" id="deleteModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>تأكيد حذف الرسالة</h3>
+                <button class="close-modal" onclick="closeDeleteModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="modalDeleteBody">
+                <!-- سيتم تعبئتها ديناميكياً -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" onclick="closeDeleteModal()">إلغاء</button>
+                <button class="btn btn-danger" id="confirmDeleteBtn">تأكيد الحذف</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/admin.js"></script>
     <script>
-        // Toggle Sidebar on Mobile
-        function toggleSidebar() {
-            document.querySelector('.sidebar').classList.toggle('active');
-        }
-
-        // Confirm Logout
-        function confirmLogout() {
-            if (confirm('هل أنت متأكد من تسجيل الخروج؟')) {
-                window.location.href = 'index.html';
+    function showMessageModal(data) {
+        document.getElementById('modalMessageBody').innerHTML = `
+            <div style="margin-bottom: 18px;">
+                <strong>الاسم:</strong> <span>${data.name}</span>
+            </div>
+            <div style="margin-bottom: 18px;">
+                <strong>رقم الهاتف:</strong> <span dir="ltr">${data.phone}</span>
+            </div>
+            <div style="margin-bottom: 18px;">
+                <strong>الرسالة:</strong>
+                <div style="background:#f8f8fa;padding:15px 12px;border-radius:8px;margin-top:7px;line-height:1.8;">${data.message}</div>
+            </div>
+            <div style="margin-bottom: 18px;">
+                <strong>الوقت والتاريخ:</strong> <span>${data.datetime}</span>
+            </div>
+            <div>
+                <strong>الحالة:</strong> <span class="status-badge ${data.status === 'مقروءة' ? 'status-read' : 'status-unread'}">${data.status}</span>
+            </div>
+        `;
+        document.getElementById('messageModal').classList.add('active');
+    }
+    function closeMessageModal() {
+        document.getElementById('messageModal').classList.remove('active');
+    }
+    let deleteIndex = null;
+    function showDeleteModal(data, idx) {
+        deleteIndex = idx;
+        document.getElementById('modalDeleteBody').innerHTML = `
+            <div class="warning-icon"><i class="fas fa-exclamation-triangle"></i></div>
+            <p>هل أنت متأكد أنك تريد حذف رسالة <span style="color:var(--primary-color);font-weight:600;">${data.name}</span>؟</p>
+            <p class="warning-text">لا يمكن التراجع عن هذا الإجراء.</p>
+        `;
+        document.getElementById('deleteModal').classList.add('active');
+    }
+    function closeDeleteModal() {
+        document.getElementById('deleteModal').classList.remove('active');
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+        var buttons = document.querySelectorAll('.action-btn[title="عرض"]');
+        var deleteBtns = document.querySelectorAll('.action-btn.text-danger[title="حذف"]');
+        var messagesData = [
+            {
+                name: 'خالد محمود',
+                phone: '+968 9123 4567',
+                message: 'أرغب في معرفة المزيد عن خدمات تصميم المطابخ.',
+                datetime: '2024/03/20 - 10:15',
+                status: 'غير مقروءة'
+            },
+            {
+                name: 'نورا سعيد',
+                phone: '+968 9876 5432',
+                message: 'هل تقدمون خدمة التركيب في صلالة؟',
+                datetime: '2024/03/19 - 16:40',
+                status: 'مقروءة'
+            },
+            {
+                name: 'سعيد العامري',
+                phone: '+968 9234 5678',
+                message: 'شكراً على سرعة الرد والتعامل الراقي.',
+                datetime: '2024/03/18 - 08:05',
+                status: 'مقروءة'
             }
-        }
-
-        // Message Modal Functions
-        function viewMessage(id) {
-            // Here you would typically fetch the message data
-            const message = {
-                subject: 'استفسار عن تصميم المطبخ',
-                sender: 'أحمد محمد',
-                email: 'ahmed@example.com',
-                date: '2024-03-20',
-                time: '10:00 صباحاً',
-                content: 'مرحباً، أرغب في معرفة المزيد عن تصاميم المطابخ المودرن. هل يمكنكم تقديم معلومات عن الأسعار والمواد المستخدمة؟ كما أود معرفة المدة الزمنية اللازمة لتنفيذ المشروع.'
-            };
-
-            // Populate modal with message data
-            document.getElementById('messageSubject').textContent = message.subject;
-            document.getElementById('messageSender').textContent = message.sender;
-            document.getElementById('messageEmail').textContent = message.email;
-            document.getElementById('messageDate').textContent = message.date;
-            document.getElementById('messageTime').textContent = message.time;
-            document.getElementById('messageContent').textContent = message.content;
-            document.getElementById('replySubject').value = `رد: ${message.subject}`;
-
-            // Show modal
-            document.getElementById('messageModal').style.display = 'block';
-
-            // Mark message as read
-            const messageItem = document.querySelector(`.message-item[onclick="viewMessage(${id})"]`);
-            if (messageItem) {
-                messageItem.classList.remove('unread');
-                const statusSpan = messageItem.querySelector('.status');
-                if (statusSpan) {
-                    statusSpan.textContent = 'مقروء';
-                    statusSpan.classList.remove('unread');
-                    statusSpan.classList.add('read');
-                }
-            }
-        }
-
-        function closeMessageModal() {
-            document.getElementById('messageModal').style.display = 'none';
-        }
-
-        // Reply Form Submission
-        document.getElementById('replyForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            // Here you would typically send the reply to the server
-            alert('تم إرسال الرد بنجاح');
-            closeMessageModal();
+        ];
+        buttons.forEach(function(btn, idx) {
+            btn.onclick = function() { showMessageModal(messagesData[idx]); };
         });
-
-        // Close modal when clicking outside
-        window.onclick = function(event) {
-            if (event.target == document.getElementById('messageModal')) {
-                closeMessageModal();
-            }
-        }
+        deleteBtns.forEach(function(btn, idx) {
+            btn.onclick = function() { showDeleteModal(messagesData[idx], idx); };
+        });
+        document.getElementById('confirmDeleteBtn').onclick = function() {
+            // هنا يمكنك تنفيذ الحذف الفعلي من الجدول أو قاعدة البيانات
+            closeDeleteModal();
+        };
+    });
     </script>
 </body>
 </html> 

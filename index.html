@@ -365,7 +365,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.9);
             z-index: 1000;
             opacity: 0;
             transition: opacity 0.3s ease;
@@ -384,7 +384,7 @@
             max-width: 1200px;
             background: #fff;
             border-radius: 20px;
-            padding: 30px;
+            padding: 40px;
             transform: translateY(20px);
             transition: transform 0.3s ease;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
@@ -392,6 +392,24 @@
 
         .model-modal.active .modal-content {
             transform: translateY(0);
+        }
+
+        .modal-header {
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .modal-header h3 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .modal-header p {
+            color: #666;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
         .close-modal {
@@ -416,6 +434,7 @@
         .close-modal:hover {
             background: #f5f5f5;
             color: #e74c3c;
+            transform: rotate(90deg);
         }
 
         .swiper {
@@ -423,6 +442,7 @@
             height: 600px;
             border-radius: 15px;
             overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
         }
 
         .swiper-slide {
@@ -436,6 +456,11 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .swiper-slide img:hover {
+            transform: scale(1.02);
         }
 
         .swiper-button-next,
@@ -451,6 +476,7 @@
         .swiper-button-next:hover,
         .swiper-button-prev:hover {
             background: rgba(0, 0, 0, 0.8);
+            transform: scale(1.1);
         }
 
         .swiper-button-next:after,
@@ -463,16 +489,22 @@
             height: 12px;
             background: #fff;
             opacity: 0.5;
+            transition: all 0.3s ease;
         }
 
         .swiper-pagination-bullet-active {
             opacity: 1;
             background: #fff;
+            transform: scale(1.2);
         }
 
         @media (max-width: 992px) {
             .modal-content {
-                padding: 20px;
+                padding: 30px;
+            }
+
+            .modal-header h3 {
+                font-size: 1.8rem;
             }
 
             .swiper {
@@ -481,6 +513,14 @@
         }
 
         @media (max-width: 768px) {
+            .modal-content {
+                padding: 20px;
+            }
+
+            .modal-header h3 {
+                font-size: 1.5rem;
+            }
+
             .swiper {
                 height: 400px;
             }
@@ -502,6 +542,18 @@
                 padding: 15px;
             }
 
+            .modal-header {
+                margin-bottom: 20px;
+            }
+
+            .modal-header h3 {
+                font-size: 1.3rem;
+            }
+
+            .modal-header p {
+                font-size: 0.9rem;
+            }
+
             .swiper {
                 height: 300px;
             }
@@ -519,7 +571,7 @@
     <header>
         <nav class="navbar">
             <div class="container nav-flex">
-                <a href="#home" class="logo">
+                <a href="index.html" class="logo">
                     <img src="assets/imgs/logo.svg" alt="شعار السندباد" class="logo-img">
                 </a>
                 <button class="nav-toggle" aria-label="فتح القائمة">
@@ -640,7 +692,7 @@
             <div class="models-grid">
                 <div class="model-card" data-model="dalia" data-aos="zoom-in">
                     <div class="model-image">
-                        <img src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="دليا شيك">
+                        <img src="assets/imgs/models/dalia.jpg" alt="دليا شيك">
                     </div>
                     <div class="model-content">
                         <h3>دليا شيك</h3>
@@ -649,7 +701,7 @@
                 </div>
                 <div class="model-card" data-model="dolce" data-aos="zoom-in">
                     <div class="model-image">
-                        <img src="https://images.unsplash.com/photo-1556912173-3bb406ef7e77?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="دولتشي كونفيفيال">
+                        <img src="assets/imgs/models/dolce.jpg" alt="دولتشي كونفيفيال">
                     </div>
                     <div class="model-content">
                         <h3>دولتشي كونفيفيال</h3>
@@ -658,11 +710,11 @@
                 </div>
                 <div class="model-card" data-model="modern" data-aos="zoom-in">
                     <div class="model-image">
-                        <img src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="دليا شيك">
+                        <img src="assets/imgs/models/modern.jpg" alt="مطبخ عصري">
                     </div>
                     <div class="model-content">
-                        <h3>دليا شيك</h3>
-                        <p>أناقة كلاسيكية مع لمسة عصرية</p>
+                        <h3>مطبخ عصري</h3>
+                        <p>تصميم عصري يناسب جميع المساحات</p>
                     </div>
                 </div>
             </div>
@@ -673,6 +725,10 @@
     <div class="model-modal" id="dalia-modal">
         <div class="modal-content">
             <button class="close-modal">&times;</button>
+            <div class="modal-header">
+                <h3>دليا شيك</h3>
+                <p>تصميم كلاسيكي أنيق يجمع بين الأصالة والحداثة، مع تفاصيل دقيقة وألوان هادئة تناسب جميع المساحات</p>
+            </div>
             <div class="swiper dalia-swiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
@@ -695,6 +751,10 @@
     <div class="model-modal" id="dolce-modal">
         <div class="modal-content">
             <button class="close-modal">&times;</button>
+            <div class="modal-header">
+                <h3>دولتشي كونفيفيال</h3>
+                <p>تصميم عصري فاخر يجمع بين الأناقة والوظيفية، مع مساحات تخزين واسعة وتفاصيل عصرية تناسب المطابخ الكبيرة</p>
+            </div>
             <div class="swiper dolce-swiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
@@ -717,6 +777,10 @@
     <div class="model-modal" id="modern-modal">
         <div class="modal-content">
             <button class="close-modal">&times;</button>
+            <div class="modal-header">
+                <h3>مطبخ عصري</h3>
+                <p>تصميم عصري بسيط وأنيق، يجمع بين الوظيفية والجمالية، مع خطوط نظيفة وألوان متناسقة تناسب جميع المساحات</p>
+            </div>
             <div class="swiper modern-swiper">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
@@ -880,7 +944,7 @@
                             <i class="fas fa-map-marker-alt"></i>
                             <div>
                                 <strong>العنوان:</strong>
-                                <p>المعبيلة - عبري - ابراء - صلالة</p>
+                                <p>المعبيلة - عبري - ابراء - صلالة</p>
                             </div>
                         </div>
                         <div class="contact-item">
@@ -949,7 +1013,7 @@
                             <li><a href="#steps">كيف نعمل</a></li>
                             <li><a href="#why-us">لماذا نحن</a></li>
                             <li><a href="#contact">تواصل معنا</a></li>
-                            <li><a href="#consult">احجز استشارة</a></li>
+                            <li><a href="consult.html">احجز استشارة</a></li>
                         </ul>
                     </div>
                     <div class="footer-column">
@@ -970,7 +1034,7 @@
                             <li>
                                 <a href="https://maps.google.com/?q=المعبيلة+السابعة+مسقط" target="_blank">
                                     <i class="fas fa-map-marker-alt"></i>
-                                    المعبيلة - عبري - ابراء - صلالة
+                                    المعبيلة - عبري - ابراء - صلالة
                                 </a>
                             </li>
                             <li>

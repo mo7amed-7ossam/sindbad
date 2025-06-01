@@ -3,37 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>إدارة الاستشارات - لوحة التحكم</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>طلبات الاستشارات | لوحة تحكم سندباد</title>
     <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="dashboard">
         <!-- Sidebar -->
         <aside class="sidebar">
             <div class="sidebar-header">
-                <img src="../assets/images/logo.png" alt="السندباد" class="sidebar-logo">
+                <img src="imgs/logo.svg" alt="Sindbad Logo" class="logo">
             </div>
             <nav class="sidebar-nav">
                 <ul>
                     <li>
-                        <a href="dashboard.html">
+                        <a href="index.html">
                             <i class="fas fa-home"></i>
                             <span>الرئيسية</span>
                         </a>
                     </li>
                     <li>
-                        <a href="designs.html">
-                            <i class="fas fa-palette"></i>
-                            <span>التصاميم</span>
+                        <a href="clients.html">
+                            <i class="fas fa-users"></i>
+                            <span>العملاء</span>
                         </a>
                     </li>
                     <li class="active">
                         <a href="consultations.html">
-                            <i class="fas fa-calendar-check"></i>
+                            <i class="fas fa-comments"></i>
                             <span>الاستشارات</span>
                         </a>
                     </li>
@@ -44,265 +42,100 @@
                         </a>
                     </li>
                     <li>
-                        <a href="settings.html">
+                        <a href="#settings">
                             <i class="fas fa-cog"></i>
                             <span>الإعدادات</span>
                         </a>
                     </li>
                 </ul>
             </nav>
-            <div class="sidebar-footer">
-                <a href="#" class="logout-btn" onclick="confirmLogout()">
-                    <i class="fas fa-sign-out-alt"></i>
-                    <span>تسجيل الخروج</span>
-                </a>
-            </div>
         </aside>
 
         <!-- Main Content -->
         <main class="main-content">
-            <div class="content-header">
+            <!-- Header -->
+            <header class="content-header">
                 <div class="header-title">
-                    <h1>إدارة الاستشارات</h1>
-                    <p>إدارة طلبات الاستشارات المجانية</p>
+                    <h1>طلبات الاستشارات</h1>
                 </div>
-            </div>
-
-            <!-- Filters -->
-            <div class="content-section">
-                <div class="filters">
-                    <div class="filter-group">
-                        <label for="status">الحالة:</label>
-                        <select id="status" class="form-control">
-                            <option value="">الكل</option>
-                            <option value="pending">قيد الانتظار</option>
-                            <option value="confirmed">مؤكد</option>
-                            <option value="completed">مكتمل</option>
-                            <option value="cancelled">ملغي</option>
-                        </select>
+                <div class="header-actions">
+                    <div class="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">3</span>
+                        <div class="notifications-dropdown">
+                            <!-- Notifications content -->
+                        </div>
                     </div>
-                    <div class="filter-group">
-                        <label for="date">التاريخ:</label>
-                        <input type="date" id="date" class="form-control">
-                    </div>
-                    <div class="filter-group">
-                        <label for="search">بحث:</label>
-                        <input type="text" id="search" class="form-control" placeholder="ابحث عن استشارة...">
+                    <div class="user-menu">
+                        <img src="https://via.placeholder.com/40" alt="User Avatar" class="avatar">
+                        <span>مدير النظام</span>
+                        <div class="user-dropdown">
+                            <!-- User dropdown content -->
+                        </div>
                     </div>
                 </div>
-            </div>
+            </header>
 
             <!-- Consultations Table -->
-            <div class="content-section">
-                <div class="table-responsive">
-                    <table class="data-table">
+            <section class="data-table">
+                <div class="table-header">
+                    <h2>قائمة طلبات الاستشارات</h2>
+                </div>
+                <div class="table-content">
+                    <table>
                         <thead>
                             <tr>
-                                <th>الاسم</th>
+                                <th>الاسم الكامل</th>
                                 <th>رقم الهاتف</th>
-                                <th>البريد الإلكتروني</th>
-                                <th>نوع المشروع</th>
-                                <th>تاريخ الاستشارة</th>
-                                <th>الحالة</th>
-                                <th>الإجراءات</th>
+                                <th>الولاية</th>
+                                <th>الميزانية المتوقعة</th>
+                                <th>إجراءات</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>أحمد محمد</td>
-                                <td>+968 12345678</td>
-                                <td>ahmed@example.com</td>
-                                <td>مطبخ مودرن</td>
-                                <td>2024-03-20</td>
-                                <td><span class="status pending">قيد الانتظار</span></td>
+                                <td>سالم بن علي</td>
+                                <td dir="ltr" class="phone-number">+968 9123 4567</td>
+                                <td>مسقط</td>
+                                <td>من 2500 إلى 3500 ريال عماني</td>
                                 <td>
-                                    <button class="btn btn-sm btn-primary" onclick="viewConsultation(1)">
-                                        <i class="fas fa-eye"></i>
-                                    </button>
-                                    <button class="btn btn-sm btn-success" onclick="confirmConsultation(1)">
-                                        <i class="fas fa-check"></i>
-                                    </button>
-                                    <button class="btn btn-sm btn-danger" onclick="cancelConsultation(1)">
-                                        <i class="fas fa-times"></i>
-                                    </button>
+                                    <div class="table-actions">
+                                        <a class="action-btn whatsapp-btn" title="تواصل واتساب" href="https://wa.me/96891234567" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                                        <button class="action-btn text-danger" title="حذف"><i class="fas fa-trash"></i></button>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td>سارة علي</td>
-                                <td>+968 87654321</td>
-                                <td>sara@example.com</td>
-                                <td>مطبخ كلاسيكي</td>
-                                <td>2024-03-19</td>
-                                <td><span class="status completed">مؤكد</span></td>
+                                <td>مريم الشحية</td>
+                                <td dir="ltr" class="phone-number">+968 9876 5432</td>
+                                <td>ظفار</td>
+                                <td>من 3500 إلى 5500 ريال عماني</td>
                                 <td>
-                                    <button class="btn btn-sm btn-primary" onclick="viewConsultation(2)">
-                                        <i class="fas fa-eye"></i>
-                                    </button>
-                                    <button class="btn btn-sm btn-success" onclick="completeConsultation(2)">
-                                        <i class="fas fa-check-double"></i>
-                                    </button>
+                                    <div class="table-actions">
+                                        <a class="action-btn whatsapp-btn" title="تواصل واتساب" href="https://wa.me/96898765432" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                                        <button class="action-btn text-danger" title="حذف"><i class="fas fa-trash"></i></button>
+                                    </div>
                                 </td>
                             </tr>
                             <tr>
-                                <td>محمد خالد</td>
-                                <td>+968 98765432</td>
-                                <td>mohammed@example.com</td>
-                                <td>مطبخ مينيمال</td>
-                                <td>2024-03-18</td>
-                                <td><span class="status cancelled">ملغي</span></td>
+                                <td>محمد البلوشي</td>
+                                <td dir="ltr" class="phone-number">+968 9234 5678</td>
+                                <td>شمال الباطنة</td>
+                                <td>من 5500 إلى 10000 ريال عماني</td>
                                 <td>
-                                    <button class="btn btn-sm btn-primary" onclick="viewConsultation(3)">
-                                        <i class="fas fa-eye"></i>
-                                    </button>
+                                    <div class="table-actions">
+                                        <a class="action-btn whatsapp-btn" title="تواصل واتساب" href="https://wa.me/96892345678" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                                        <button class="action-btn text-danger" title="حذف"><i class="fas fa-trash"></i></button>
+                                    </div>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-            </div>
+            </section>
         </main>
     </div>
 
-    <!-- View Consultation Modal -->
-    <div id="consultationModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>تفاصيل الاستشارة</h2>
-                <button class="close-btn" onclick="closeConsultationModal()">&times;</button>
-            </div>
-            <div class="modal-body">
-                <div class="consultation-details">
-                    <div class="detail-group">
-                        <label>الاسم:</label>
-                        <p id="consultationName"></p>
-                    </div>
-                    <div class="detail-group">
-                        <label>رقم الهاتف:</label>
-                        <p id="consultationPhone"></p>
-                    </div>
-                    <div class="detail-group">
-                        <label>البريد الإلكتروني:</label>
-                        <p id="consultationEmail"></p>
-                    </div>
-                    <div class="detail-group">
-                        <label>نوع المشروع:</label>
-                        <p id="consultationType"></p>
-                    </div>
-                    <div class="detail-group">
-                        <label>المساحة التقريبية:</label>
-                        <p id="consultationArea"></p>
-                    </div>
-                    <div class="detail-group">
-                        <label>الميزانية:</label>
-                        <p id="consultationBudget"></p>
-                    </div>
-                    <div class="detail-group">
-                        <label>تاريخ الاستشارة:</label>
-                        <p id="consultationDate"></p>
-                    </div>
-                    <div class="detail-group">
-                        <label>الوقت المفضل:</label>
-                        <p id="consultationTime"></p>
-                    </div>
-                    <div class="detail-group">
-                        <label>ملاحظات إضافية:</label>
-                        <p id="consultationNotes"></p>
-                    </div>
-                </div>
-                <div class="form-actions">
-                    <button class="btn btn-success" onclick="confirmConsultation()">
-                        <i class="fas fa-check"></i>
-                        تأكيد الاستشارة
-                    </button>
-                    <button class="btn btn-danger" onclick="cancelConsultation()">
-                        <i class="fas fa-times"></i>
-                        إلغاء الاستشارة
-                    </button>
-                    <button class="btn btn-secondary" onclick="closeConsultationModal()">
-                        <i class="fas fa-times"></i>
-                        إغلاق
-                    </button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // Toggle Sidebar on Mobile
-        function toggleSidebar() {
-            document.querySelector('.sidebar').classList.toggle('active');
-        }
-
-        // Confirm Logout
-        function confirmLogout() {
-            if (confirm('هل أنت متأكد من تسجيل الخروج؟')) {
-                window.location.href = 'index.html';
-            }
-        }
-
-        // Consultation Modal Functions
-        function viewConsultation(id) {
-            // Here you would typically fetch the consultation data
-            const consultation = {
-                name: 'أحمد محمد',
-                phone: '+968 12345678',
-                email: 'ahmed@example.com',
-                type: 'مطبخ مودرن',
-                area: '20 متر مربع',
-                budget: '5000 ريال',
-                date: '2024-03-20',
-                time: '10:00 صباحاً',
-                notes: 'أرغب في تصميم مطبخ مودرن بألوان فاتحة'
-            };
-
-            // Populate modal with consultation data
-            document.getElementById('consultationName').textContent = consultation.name;
-            document.getElementById('consultationPhone').textContent = consultation.phone;
-            document.getElementById('consultationEmail').textContent = consultation.email;
-            document.getElementById('consultationType').textContent = consultation.type;
-            document.getElementById('consultationArea').textContent = consultation.area;
-            document.getElementById('consultationBudget').textContent = consultation.budget;
-            document.getElementById('consultationDate').textContent = consultation.date;
-            document.getElementById('consultationTime').textContent = consultation.time;
-            document.getElementById('consultationNotes').textContent = consultation.notes;
-
-            // Show modal
-            document.getElementById('consultationModal').style.display = 'block';
-        }
-
-        function closeConsultationModal() {
-            document.getElementById('consultationModal').style.display = 'none';
-        }
-
-        function confirmConsultation(id) {
-            if (confirm('هل أنت متأكد من تأكيد هذه الاستشارة؟')) {
-                // Here you would typically send a confirmation request to the server
-                alert('تم تأكيد الاستشارة بنجاح');
-                closeConsultationModal();
-            }
-        }
-
-        function cancelConsultation(id) {
-            if (confirm('هل أنت متأكد من إلغاء هذه الاستشارة؟')) {
-                // Here you would typically send a cancellation request to the server
-                alert('تم إلغاء الاستشارة بنجاح');
-                closeConsultationModal();
-            }
-        }
-
-        function completeConsultation(id) {
-            if (confirm('هل أنت متأكد من إكمال هذه الاستشارة؟')) {
-                // Here you would typically send a completion request to the server
-                alert('تم إكمال الاستشارة بنجاح');
-            }
-        }
-
-        // Close modal when clicking outside
-        window.onclick = function(event) {
-            if (event.target == document.getElementById('consultationModal')) {
-                closeConsultationModal();
-            }
-        }
-    </script>
+    <script src="js/admin.js"></script>
 </body>
 </html> 

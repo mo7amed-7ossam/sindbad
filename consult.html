@@ -25,14 +25,14 @@
                 </button>
                 <ul class="nav-links">
                     <li><a href="index.html">الرئيسية</a></li>
-                    <li><a href="about.html">من نحن</a></li>
-                    <li><a href="services.html">الخدمات</a></li>
-                    <li><a href="gallery.html">معرض الصور</a></li>
-                    <li><a href="testimonials.html">آراء العملاء</a></li>
-                    <li><a href="contact.html">تواصل معنا</a></li>
+                    <li><a href="index.html#about">من نحن</a></li>
+                    <li><a href="index.html#kitchen-models">تصاميمنا</a></li>
+                    <li><a href="index.html#steps">كيف نعمل</a></li>
+                    <li><a href="index.html#why-us">لماذا نحن</a></li>
+                    <li><a href="index.html#contact">تواصل معنا</a></li>
                 </ul>
                 <div class="nav-actions">
-                    <a href="consult.html" class="btn btn-primary">احجز استشارة</a>
+                    <a href="consult.html" class="btn btn-primary">أحجز موعدك الأن</a>
                 </div>
             </div>
         </nav>
@@ -55,118 +55,48 @@
                             <i class="fas fa-clock"></i>
                             <span>رد سريع خلال 24 ساعة</span>
                         </div>
-                        <div class="feature">
-                            <i class="fas fa-user-tie"></i>
-                            <span>خبراء متخصصون</span>
-                        </div>
-                    </div>
-                    <div class="contact-info">
-                        <h3>تواصل معنا</h3>
-                        <div class="contact-list">
-                            <div class="contact-item">
-                                <div>
-                                    <h4><i class="fas fa-map-marker-alt"></i> العنوان</h4>
-                                    <p>المعبيلة السابعة – مقابل مدرسة الأجيال العصرية – مسقط – سلطنة عمان</p>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <div>
-                                    <h4><i class="fas fa-phone"></i> اتصل بنا</h4>
-                                    <p><a href="tel:+96871155500">+968 7115 5500</a></p>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <div>
-                                    <h4><i class="fas fa-envelope"></i> البريد الإلكتروني</h4>
-                                    <p><a href="mailto:info@sindbad.om">info@sindbad.om</a></p>
-                                </div>
-                            </div>
-                            <div class="contact-item">
-                                <div>
-                                    <h4><i class="fab fa-whatsapp"></i> واتساب</h4>
-                                    <p><a href="https://wa.me/96871155500" target="_blank">تواصل عبر واتساب</a></p>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <div class="form-container">
-                    <div class="form-progress">
-                        <div class="progress-step active" data-step="1">
-                            <span class="step-number">1</span>
-                            <span class="step-title">المعلومات الشخصية</span>
-                        </div>
-                        <div class="progress-step" data-step="2">
-                            <span class="step-number">2</span>
-                            <span class="step-title">تفاصيل المطبخ</span>
-                        </div>
-                        <div class="progress-step" data-step="3">
-                            <span class="step-number">3</span>
-                            <span class="step-title">ملاحظات إضافية</span>
-                        </div>
-                    </div>
                     <form id="consultationForm">
                         <div class="form-step active" data-step="1">
                             <div class="form-group">
                                 <label for="name">الاسم الكامل</label>
-                                <input type="text" id="name" name="name" required>
-                                <div class="error-message">الرجاء إدخال الاسم الكامل</div>
+                                <input type="text" id="name" name="name">
                             </div>
                             <div class="form-group">
                                 <label for="phone">رقم الهاتف</label>
-                                <input type="tel" id="phone" name="phone" required>
-                                <div class="error-message">الرجاء إدخال رقم الهاتف</div>
+                                <input type="tel" id="phone" name="phone">
                             </div>
                             <div class="form-group">
-                                <label for="email">البريد الإلكتروني</label>
-                                <input type="email" id="email" name="email" required>
-                                <div class="error-message">الرجاء إدخال بريد إلكتروني صحيح</div>
-                            </div>
-                            <div class="form-group">
-                                <label for="address">العنوان</label>
-                                <input type="text" id="address" name="address" required>
-                                <div class="error-message">الرجاء إدخال العنوان</div>
-                            </div>
-                            <div class="form-navigation">
-                                <button type="button" class="btn btn-primary next-step">التالي</button>
-                            </div>
-                        </div>
-
-                        <div class="form-step" data-step="2">
-                            <div class="form-group">
-                                <label for="kitchenType">نوع المطبخ المطلوب</label>
-                                <select id="kitchenType" name="kitchenType" required>
-                                    <option value="">اختر نوع المطبخ</option>
-                                    <option value="modern">مطبخ عصري</option>
-                                    <option value="classic">مطبخ كلاسيكي</option>
-                                    <option value="minimal">مطبخ مينيمال</option>
-                                    <option value="open">مطبخ مفتوح</option>
+                                <label for="governorate">الولاية</label>
+                                <select id="governorate" name="governorate">
+                                    <option value="">اختر الولاية</option>
+                                    <option value="muscat">مسقط</option>
+                                    <option value="musandam">مسندم</option>
+                                    <option value="dhofar">ظفار</option>
+                                    <option value="musanah">مسناه</option>
+                                    <option value="buraimi">البريمي</option>
+                                    <option value="dakhiliyah">الداخلية</option>
+                                    <option value="north_batinah">شمال الباطنة</option>
+                                    <option value="south_batinah">جنوب الباطنة</option>
+                                    <option value="north_sharqiyah">شمال الشرقية</option>
+                                    <option value="south_sharqiyah">جنوب الشرقية</option>
+                                    <option value="dhahirah">الظاهرة</option>
+                                    <option value="wusta">الوسطى</option>
                                 </select>
-                                <div class="error-message">الرجاء اختيار نوع المطبخ</div>
                             </div>
                             <div class="form-group">
                                 <label for="budget">الميزانية المتوقعة</label>
-                                <select id="budget" name="budget" required>
+                                <select id="budget" name="budget">
                                     <option value="">اختر الميزانية</option>
-                                    <option value="low">اقتصادي</option>
-                                    <option value="medium">متوسط</option>
-                                    <option value="high">فاخر</option>
+                                    <option value="2500-3500">من 2500 إلى 3500 ريال عماني</option>
+                                    <option value="3500-5500">من 3500 إلى 5500 ريال عماني</option>
+                                    <option value="5500-10000">من 5500 إلى 10000 ريال عماني</option>
+                                    <option value="other">غير ذلك</option>
                                 </select>
-                                <div class="error-message">الرجاء اختيار الميزانية</div>
                             </div>
                             <div class="form-navigation">
-                                <button type="button" class="btn btn-secondary prev-step">السابق</button>
-                                <button type="button" class="btn btn-primary next-step">التالي</button>
-                            </div>
-                        </div>
-
-                        <div class="form-step" data-step="3">
-                            <div class="form-group">
-                                <label for="message">ملاحظات إضافية</label>
-                                <textarea id="message" name="message" rows="4"></textarea>
-                            </div>
-                            <div class="form-navigation">
-                                <button type="button" class="btn btn-secondary prev-step">السابق</button>
                                 <button type="submit" class="btn btn-primary">
                                     <i class="fas fa-paper-plane"></i>
                                     إرسال الطلب
@@ -194,7 +124,7 @@
     </a>
 
     <!-- Footer -->
-    <footer>
+    <footer data-aos="fade-up">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
@@ -211,12 +141,13 @@
                     <div class="footer-column">
                         <h4>روابط سريعة</h4>
                         <ul>
-                            <li><a href="about.html">من نحن</a></li>
-                            <li><a href="services.html">خدماتنا</a></li>
-                            <li><a href="gallery.html">معرض الأعمال</a></li>
-                            <li><a href="testimonials.html">آراء العملاء</a></li>
-                            <li><a href="contact.html">تواصل معنا</a></li>
-                            <li><a href="privacy.html">سياسة الخصوصية</a></li>
+                            <li><a href="index.html">الرئيسية</a></li>
+                            <li><a href="index.html#about">من نحن</a></li>
+                            <li><a href="index.html#kitchen-models">تصاميمنا</a></li>
+                            <li><a href="index.html#steps">كيف نعمل</a></li>
+                            <li><a href="index.html#why-us">لماذا نحن</a></li>
+                            <li><a href="index.html#contact">تواصل معنا</a></li>
+                            <li><a href="consult.html">احجز استشارة</a></li>
                         </ul>
                     </div>
                     <div class="footer-column">
@@ -235,9 +166,9 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="https://maps.google.com" target="_blank">
+                                <a href="https://maps.google.com/?q=المعبيلة+السابعة+مسقط" target="_blank">
                                     <i class="fas fa-map-marker-alt"></i>
-                                    المعبيلة السابعة – مقابل مدرسة الأجيال العصرية – مسقط
+                                    المعبيلة - عبري - ابراء - صلالة
                                 </a>
                             </li>
                             <li>
@@ -348,18 +279,19 @@
         }
 
         .form-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.5fr;
+            display: flex;
+            flex-direction: column;
             gap: 40px;
-            align-items: start;
+            align-items: center;
         }
 
         .form-content {
             text-align: center;
             margin-bottom: 0;
-            position: sticky;
-            top: 100px;
+            position: relative;
             padding: 15px;
+            width: 100%;
+            max-width: 800px;
         }
 
         .form-container {
@@ -367,6 +299,8 @@
             border-radius: 12px;
             box-shadow: 0 2px 15px rgba(0,0,0,0.05);
             padding: 30px;
+            width: 100%;
+            max-width: 800px;
         }
 
         .form-progress {
@@ -449,26 +383,43 @@
             position: relative;
         }
 
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #2C3E50;
+            font-weight: 500;
+        }
+
+        .form-group label::after {
+            content: ' *';
+            color: #E74C3C;
+        }
+
         .form-group .error-message {
             color: #E74C3C;
             font-size: 0.85rem;
             margin-top: 5px;
+            padding: 5px 10px;
+            background-color: #FDF2F2;
+            border-radius: 4px;
+            border-right: 3px solid #E74C3C;
             display: none;
+            animation: fadeIn 0.3s ease;
         }
 
         .form-group input.error,
         .form-group select.error {
             border-color: #E74C3C;
+            background-color: #FDF2F2;
         }
 
-        .form-group input.error + .error-message,
-        .form-group select.error + .error-message {
-            display: block;
+        .form-group input.error:focus,
+        .form-group select.error:focus {
+            box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
         }
 
         .form-group input,
-        .form-group select,
-        .form-group textarea {
+        .form-group select {
             width: 100%;
             padding: 12px 15px;
             border: 1px solid #E0E0E0;
@@ -480,20 +431,8 @@
             color: #2C3E50;
         }
 
-        .form-group input::placeholder,
-        .form-group select::placeholder,
-        .form-group textarea::placeholder {
-            color: #95a5a6;
-            font-family: 'Cairo', sans-serif;
-        }
-
-        .form-group select option {
-            font-family: 'Cairo', sans-serif;
-        }
-
         .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
+        .form-group select:focus {
             border-color: #4BA3B3;
             outline: none;
             box-shadow: 0 0 0 3px rgba(75, 163, 179, 0.1);
@@ -693,13 +632,12 @@
 
             /* Form Styles */
             .form-grid {
-                grid-template-columns: 1fr;
                 gap: 30px;
             }
 
             .form-content {
                 position: static;
-                padding:  25px;
+                padding: 25px;
                 margin-bottom: 25px;
             }
 
@@ -767,7 +705,8 @@
 
             .form-container {
                 padding: 20px;
-                margin: 0 15px;
+                margin: 0;
+                width: 100%;
             }
 
             .form-progress {
@@ -871,7 +810,8 @@
 
             .form-container {
                 padding: 15px;
-                margin: 0 10px;
+                margin: 0;
+                width: 100%;
             }
 
             .progress-step {
@@ -1039,96 +979,118 @@
             }
         });
 
-        // Form steps navigation
-        const formSteps = document.querySelectorAll('.form-step');
-        const progressSteps = document.querySelectorAll('.progress-step');
-        const nextButtons = document.querySelectorAll('.next-step');
-        const prevButtons = document.querySelectorAll('.prev-step');
+        // Form validation and submission
+        const form = document.getElementById('consultationForm');
+        const successPopup = document.getElementById('successPopup');
 
-        function showStep(stepNumber) {
-            formSteps.forEach(step => {
-                step.classList.remove('active');
-                if (step.dataset.step === stepNumber.toString()) {
-                    step.classList.add('active');
-                }
-            });
-
-            progressSteps.forEach(step => {
-                step.classList.remove('active');
-                if (parseInt(step.dataset.step) <= parseInt(stepNumber)) {
-                    step.classList.add('active');
-                }
-            });
+        function createErrorMessage(message) {
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'error-message';
+            errorDiv.textContent = message;
+            return errorDiv;
         }
 
-        function validateStep(step) {
-            const inputs = step.querySelectorAll('input[required], select[required]');
-            let isValid = true;
+        function showError(input, message) {
+            input.classList.add('error');
+            let errorDiv = input.parentElement.querySelector('.error-message');
+            if (!errorDiv) {
+                errorDiv = createErrorMessage(message);
+                input.parentElement.appendChild(errorDiv);
+            }
+            errorDiv.textContent = message;
+            errorDiv.style.display = 'block';
+        }
 
-            inputs.forEach(input => {
-                const errorMessage = input.nextElementSibling;
-                if (!input.value.trim()) {
-                    isValid = false;
-                    input.classList.add('error');
-                    errorMessage.style.display = 'block';
-                } else {
-                    input.classList.remove('error');
-                    errorMessage.style.display = 'none';
-                }
-            });
+        function clearError(input) {
+            input.classList.remove('error');
+            const errorDiv = input.parentElement.querySelector('.error-message');
+            if (errorDiv) {
+                errorDiv.style.display = 'none';
+            }
+        }
+
+        function validateForm() {
+            let isValid = true;
+            const nameInput = document.getElementById('name');
+            const phoneInput = document.getElementById('phone');
+            const governorateInput = document.getElementById('governorate');
+            const budgetInput = document.getElementById('budget');
+
+            // التحقق من الاسم
+            if (!nameInput.value.trim()) {
+                showError(nameInput, 'الاسم الكامل مطلوب');
+                isValid = false;
+            } else if (nameInput.value.trim().length < 3) {
+                showError(nameInput, 'الاسم يجب أن يكون 3 أحرف على الأقل');
+                isValid = false;
+            } else {
+                clearError(nameInput);
+            }
+
+            // التحقق من رقم الهاتف
+            const phoneRegex = /^9\d{8}$/;
+            if (!phoneInput.value.trim()) {
+                showError(phoneInput, 'رقم الهاتف مطلوب');
+                isValid = false;
+            } else if (!phoneRegex.test(phoneInput.value.trim())) {
+                showError(phoneInput, 'رقم الهاتف يجب أن يبدأ بـ 9 ويتكون من 9 أرقام');
+                isValid = false;
+            } else {
+                clearError(phoneInput);
+            }
+
+            // التحقق من الولاية
+            if (!governorateInput.value) {
+                showError(governorateInput, 'يرجى اختيار الولاية');
+                isValid = false;
+            } else {
+                clearError(governorateInput);
+            }
+
+            // التحقق من الميزانية
+            if (!budgetInput.value) {
+                showError(budgetInput, 'يرجى اختيار الميزانية');
+                isValid = false;
+            } else {
+                clearError(budgetInput);
+            }
 
             return isValid;
         }
 
-        nextButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const currentStep = button.closest('.form-step');
-                if (validateStep(currentStep)) {
-                    const nextStepNumber = parseInt(currentStep.dataset.step) + 1;
-                    showStep(nextStepNumber);
+        // إضافة مستمعي الأحداث للحقول
+        const inputs = form.querySelectorAll('input, select');
+        inputs.forEach(input => {
+            input.addEventListener('input', () => {
+                if (input.value.trim()) {
+                    clearError(input);
+                }
+            });
+
+            // إضافة التحقق عند ترك الحقل
+            input.addEventListener('blur', () => {
+                if (!input.value.trim()) {
+                    validateForm();
                 }
             });
         });
 
-        prevButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const currentStep = button.closest('.form-step');
-                const prevStepNumber = parseInt(currentStep.dataset.step) - 1;
-                showStep(prevStepNumber);
-            });
-        });
-
-        // Form submission
-        const form = document.getElementById('consultationForm');
-        const successPopup = document.getElementById('successPopup');
-
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
-            const currentStep = form.querySelector('.form-step.active');
             
-            if (validateStep(currentStep)) {
+            if (validateForm()) {
                 try {
-                    // هنا يمكنك إضافة كود إرسال البيانات إلى الخادم
-                    // const formData = new FormData(form);
-                    // const response = await fetch('your-api-endpoint', {
-                    //     method: 'POST',
-                    //     body: formData
-                    // });
+                    successPopup.classList.add('active');
+                    form.reset();
                     
-                    // if (response.ok) {
-                        successPopup.classList.add('active');
-                        form.reset();
-                        showStep(1);
-                        
-                        // Auto close popup after 3 seconds
+                    // Auto close popup after 3 seconds
+                    setTimeout(() => {
+                        successPopup.style.animation = 'fadeOut 0.3s ease forwards';
                         setTimeout(() => {
-                            successPopup.style.animation = 'fadeOut 0.3s ease forwards';
-                            setTimeout(() => {
-                                successPopup.classList.remove('active');
-                                successPopup.style.animation = '';
-                            }, 300);
-                        }, 3000);
-                    // }
+                            successPopup.classList.remove('active');
+                            successPopup.style.animation = '';
+                        }, 300);
+                    }, 3000);
                 } catch (error) {
                     console.error('Error submitting form:', error);
                     alert('حدث خطأ أثناء إرسال النموذج. يرجى المحاولة مرة أخرى.');

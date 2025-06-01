@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إضافة عميل | لوحة تحكم سندباد</title>
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="imgs/logo.svg" alt="Sindbad Logo" class="logo">
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li>
+                        <a href="index.html">
+                            <i class="fas fa-home"></i>
+                            <span>الرئيسية</span>
+                        </a>
+                    </li>
+                    <li class="active">
+                        <a href="clients.html">
+                            <i class="fas fa-users"></i>
+                            <span>العملاء</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#consultations">
+                            <i class="fas fa-comments"></i>
+                            <span>الاستشارات</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#messages">
+                            <i class="fas fa-envelope"></i>
+                            <span>الرسائل</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#settings">
+                            <i class="fas fa-cog"></i>
+                            <span>الإعدادات</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="content-header">
+                <div class="header-title">
+                    <h1>إضافة عميل جديد</h1>
+                </div>
+                <div class="header-actions">
+                    <div class="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="badge">3</span>
+                        <div class="notifications-dropdown">
+                            <!-- Notifications content -->
+                        </div>
+                    </div>
+                    <div class="user-menu">
+                        <img src="https://via.placeholder.com/40" alt="User Avatar" class="avatar">
+                        <span>مدير النظام</span>
+                        <div class="user-dropdown">
+                            <!-- User dropdown content -->
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Add Client Form -->
+            <div class="form-container">
+                <form class="add-client-form">
+                    <div class="form-grid">
+                        <!-- Client Information -->
+                        <div class="form-section">
+                            <h2>معلومات العميل</h2>
+                            <div class="form-group">
+                                <label for="fullName">الاسم الكامل</label>
+                                <input type="text" id="fullName" name="fullName" placeholder="مثال: سعيد بن محمد" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">رقم الهاتف</label>
+                                <input type="tel" id="phone" name="phone" dir="ltr" placeholder="+968 9123 4567" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="state">الولاية</label>
+                                <select id="state" name="state" required>
+                                    <option value="">اختر الولاية</option>
+                                    <option value="مسقط">مسقط</option>
+                                    <option value="ظفار">ظفار</option>
+                                    <option value="مسندم">مسندم</option>
+                                    <option value="البريمي">البريمي</option>
+                                    <option value="الظاهرة">الظاهرة</option>
+                                    <option value="الداخلية">الداخلية</option>
+                                    <option value="شمال الباطنة">شمال الباطنة</option>
+                                    <option value="جنوب الباطنة">جنوب الباطنة</option>
+                                    <option value="شمال الشرقية">شمال الشرقية</option>
+                                    <option value="جنوب الشرقية">جنوب الشرقية</option>
+                                    <option value="الوسطى">الوسطى</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="status">الحالة</label>
+                                <select id="status" name="status" required>
+                                    <option value="active">نشط</option>
+                                    <option value="inactive">غير نشط</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Form Actions -->
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-secondary" onclick="window.location.href='clients.html'">
+                            <i class="fas fa-times"></i>
+                            إلغاء
+                        </button>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-save"></i>
+                            حفظ العميل
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/admin.js"></script>
+</body>
+</html> 
